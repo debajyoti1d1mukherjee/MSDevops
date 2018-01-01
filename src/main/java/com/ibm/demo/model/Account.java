@@ -16,6 +16,7 @@ public class Account {
 
     public Account(){}
 
+    
     public Account(String phone, String password,String accId,String name) {
         this.phone = phone;
         this.password = password;

@@ -28,6 +28,7 @@ import org.springframework.data.mongodb.core.query.Query;
 @Repository
 @Service
 public class AccountSearchRepository {
+	
 
 	@Autowired
 	MongoTemplate mongoTemplate;

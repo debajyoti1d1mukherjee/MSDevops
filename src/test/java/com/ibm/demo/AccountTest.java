@@ -28,6 +28,7 @@ public class AccountTest {
 
        
 
+        
         Assert.assertEquals("9830553821", acc.getPhone());
         Assert.assertEquals("password1", acc.getPassword());
         Assert.assertEquals("A001", acc.getaccId());

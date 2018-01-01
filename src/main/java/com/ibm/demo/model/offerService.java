@@ -17,6 +17,7 @@ public class offerService {
 	
      public offerService(){}
 
+     
      public offerService(String userPhone, String userName,String userAccId,String offerid) {
          this.userPhone = userPhone;
          this.userName = userName;

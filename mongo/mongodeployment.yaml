@@ -13,3 +13,4 @@ spec:
             image: mongo
             ports:
             - containerPort: 27017
+            

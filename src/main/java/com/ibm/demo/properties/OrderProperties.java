@@ -19,6 +19,7 @@ public class OrderProperties {
         return "OrderServiceUrl: "+ this.OrderServiceUrl+"\n"
                 + "OrderServicePort: "+this.OrderServicePort+"\n";
     }
+    
  
     public String getResourceUrl() {
         return OrderServiceUrl;
