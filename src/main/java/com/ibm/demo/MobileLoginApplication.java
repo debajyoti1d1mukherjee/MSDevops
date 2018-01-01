@@ -21,6 +21,7 @@ public class MobileLoginApplication {
 	}
 //main method added	
 	public void run() {
+		
 	}
 }
 
