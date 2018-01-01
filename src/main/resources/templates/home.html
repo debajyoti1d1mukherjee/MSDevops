@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+
+<style type="text/css"> 
+#mydiv {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    width:30em;
+    height:18em;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    border: 1px solid #ccc;
+    background-color: #fdecad;
+    border-radius: 20px;
+}
+</style> 
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+
+</head>
+
+ 
+<body>
+<script type="text/javascript">
+ $(document).ready(function(){   
+	 
+	 
+     $("#myform").submit(function(event){  
+    	 
+    	 event.preventDefault();
+    	 $("#btnBooking").prop("disabled", true);
+    	 
+             var userName=document.getElementById("userName").value;
+             
+             var userPhone=document.getElementById("userPhone").value;
+             
+             var userAccId=document.getElementById("userAccId").value;
+            
+             var offerid=document.getElementById("offerid").value; 
+             
+             var orderServiceURL=document.getElementById("orderServiceURL").value; 
+             var orderServicePORT=document.getElementById("orderServicePORT").value; 
+             
+             //var JSONObject= {"userPhone":userPhone, "userName":userName, "userAccId":userAccId, "offerid":offerid};
+             var JSONObject={"id":"100","userPhone":"9831940480","userName":"Deb","userAccId":"234","offerid":"345"};
+             var jsonData = JSON.stringify( JSONObject );
+             
+             var orderURL="http://"+orderServiceURL+":"+orderServicePORT+"/offer/addOffer";
+              
+             $.ajax({
+                
+            	 url: "http://168.1.149.20:32482/offer/addOffer",
+                 type: "POST",
+                 crossDomain: true,
+                 dataType: "json",                  
+                 data: jsonData,
+                 contentType: "application/json",
+                 success: function(response){
+                	 
+                	 
+                    //alert(JSON.stringify(response));
+                	 window.location="http://168.1.149.20:30953/success.html";
+                 },
+                 error: function(err){
+                    //alert(JSON.stringify(err));
+                    
+                	 window.location="http://168.1.149.20:30953/success.html";
+                 }
+            });     
+     });  
+}); 
+
+
+</script>
+
+ <div id="mydiv">
+<br/>
+<br/>
+<table width="20%" bgcolor="fdecad" align="center" style="font-family:arial;">
+<form  id="myform">
+<tr>
+<td colspan="2"><font size="4"><b>Welcome !!!</b></font></td>
+
+</tr>
+
+<tr><td colspan="2" th:text="${userName}" color="red"></td></tr>
+<tr><td colspan="2"></td></tr>
+<tr><td colspan="2"></td></tr>
+<tr>
+<td colspan="2" >Select Plan:</td>
+
+</tr>
+<tr>
+<td>
+<input type="hidden" size="25" name="userName" id="userName" th:value="${userName}"/>
+<input type="hidden" size="25" name="userAccId" id="userAccId" th:value="${userAccId}"/>
+<input type="hidden" size="25" name="userPhone" id="userPhone" th:value="${userPhone}"/>
+<input type="hidden" size="25" name="orderServiceURL" id="orderServiceURL" th:value="${orderServiceURL}"/>
+<input type="hidden" size="25" name="orderServicePORT" id="orderServicePORT" th:value="${orderServicePORT}"/>
+
+<select name="offerid" id="offerid">
+<option value="data2gb">Plan 2 GB</option>
+<option value="data3gb">Plan 3 GB</option>
+<option value="data4gb">Plan 4 GB</option>
+<option value="data5gb">Plan 5 GB</option>
+<option value="data6gb">Plan 6 GB</option>
+
+
+</select>
+</td>
+</tr>
+<tr>
+<td><input type="Reset"/></td>
+
+<td><button type="submit" id="btnBooking" >Submit</button></td>
+               
+<!--  <td><input type="submit"  value="Submit"/></td>-->
+
+
+</tr>
+
+</form>
+</table>
+   </div>
+</body>
+ 
+</html>

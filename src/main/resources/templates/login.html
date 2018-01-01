@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Welcome to the Vodafone Family</title>
+    <style type="text/css"> 
+#mydiv {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    width:30em;
+    height:18em;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    border: 1px solid #ccc;
+    background-color: #DF0101;
+    border-radius: 20px;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+table, td {
+    border: 2px ;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    padding: 5px;
+}
+
+</style> 
+
+<script>  
+function validateform(){  
+var userid=document.myform.userid.value;  
+var password=document.myform.password.value;  
+  
+if (userid==null || userid==""){  
+  alert("Phone Number can't be blank");  
+  return false;  
+}
+else if (password==null || password==""){  
+	  alert("password can't be blank");  
+	  return false;  
+	}
+	
+	return true;
+}  
+</script>  
+</head>
+<body>
+ <img th:src="@{/images/vodafone.jpg}"
+          src="../images/vodafone.jpg"  alt="Responsive image" height="150" width="500" /> 
+
+
+ 
+<div id="mydiv">
+<br/>
+<br/>
+
+<table width="20%" bgcolor="FFFFFF" align="center" style="font-family:Verdana, Arial, Helvetica, sans-serif;">
+<form name="myform"   action="/login" method="post" onsubmit="return validateform()">
+<tr>
+<td colspan="2"><center><font size="4"><b>Member Login Page</b></font></center></td>
+</tr>
+
+<tr><td colspan="2" th:text="${userList}" color="red"></td></tr>
+<tr><td colspan="2"></td></tr>
+<tr><td colspan="2"></td></tr>
+<tr>
+<td>Phone</td>
+<td><input type="text" size="25" name="userid" value=""/></td>
+</tr>
+
+<tr>
+<td>Password:</td>
+<td><input type="password" size="25" name="password" value=""/></td>
+</tr>
+<tr><td colspan="2"></td></tr>
+<tr><td colspan="2"></td></tr>
+<tr><td colspan="2"></td></tr>
+<tr>
+<td><input type="Reset"/></td>
+<td><input type="submit" value="Login"/></td>
+</tr>
+</form>
+</table>
+</div>
+</body>
+</html>
