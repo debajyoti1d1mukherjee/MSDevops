@@ -10,9 +10,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 //This is a boot application hook test
 @SpringBootApplication
 @EnableMongoRepositories("com.ibm.demo.repository")
-//@EnableDiscoveryClient
-//@EnableCircuitBreaker
-//@EnableHystrix
+
 @EnableCaching
 public class MobileLoginApplication {
 
