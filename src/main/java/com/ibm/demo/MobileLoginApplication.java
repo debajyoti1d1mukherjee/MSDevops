@@ -21,7 +21,7 @@ public class MobileLoginApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MobileLoginApplication.class, args);
 	}
-//main method added	
+//main method added	here
 	public void run() {
 		
 	}
