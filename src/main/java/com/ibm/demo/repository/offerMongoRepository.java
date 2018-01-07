@@ -6,5 +6,5 @@ import com.ibm.demo.model.offerService;
 
 
 ////////////ll//////,,,
-////Repository////////////////sgggg,,,,
+////Repository////////////////sgggg,,,,,,,
  interface offerMongoRepository extends CrudRepository<offerService, String>{}
