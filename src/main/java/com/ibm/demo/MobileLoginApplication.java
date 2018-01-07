@@ -26,7 +26,4 @@ public class MobileLoginApplication {
 		
 	}
 }
-
-
-
-
+//end
