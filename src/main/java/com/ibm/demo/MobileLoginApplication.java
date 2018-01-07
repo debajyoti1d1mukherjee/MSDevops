@@ -10,6 +10,8 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 //This is a boot application hook test or polling test
 //Will be deployed in kubernetes
 
+
+
 @SpringBootApplication
 @EnableMongoRepositories("com.ibm.demo.repository")
 
