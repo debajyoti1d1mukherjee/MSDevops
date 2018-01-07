@@ -8,6 +8,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 //This is a boot application hook test or polling test
+//Will be deployed in kubernetes
 
 @SpringBootApplication
 @EnableMongoRepositories("com.ibm.demo.repository")
