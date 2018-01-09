@@ -22,7 +22,7 @@ public class MobileLoginApplication {
 		SpringApplication.run(MobileLoginApplication.class, args);
 	}
 
-	//run method///
+	//run method
 	public void run() {
 		
 	}
